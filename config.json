@@ -1,0 +1,41 @@
+{
+  "server": {
+    "port": 3000,
+    "staticRoot": "public",
+    "configUrl": "/config.json",
+    "cacheControl": "no-cache"
+  },
+  "array": {
+    "minLength": 10,
+    "maxLength": 100,
+    "defaultLength": 25,
+    "minValue": 30,
+    "maxValue": 500,
+    "defaultType": "random",
+    "almostSortedRatio": 0.15
+  },
+  "playback": {
+    "frameMs": 16.7,
+    "defaultIntervalMs": 80,
+    "minIntervalMs": 0.5,
+    "maxIntervalMs": 400,
+    "backlogSteps": 4,
+    "speedSlider": {
+      "min": 1,
+      "max": 100,
+      "default": 55,
+      "slowestMs": 400,
+      "fastestMs": 0.5,
+      "curve": 2
+    }
+  },
+  "display": {
+    "denseThreshold": 30,
+    "compactBarWidth": 18
+  },
+  "ui": {
+    "defaultAlgorithm": "bubble",
+    "guideAutoOpen": true,
+    "guideStorageKey": "sortsimple-zh-guide-seen"
+  }
+}

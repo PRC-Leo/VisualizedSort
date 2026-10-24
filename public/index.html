@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="排序算法可视化：用条形图实时观察比较、交换与写入过程，支持多种排序算法与中文操作指南。">
+  <title>排序可视化 · SortSimple 中文版</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header id="app-header">
+    <h1 id="app-title">排序可视化 · SortSimple 中文版</h1>
+    <div class="header-actions">
+      <button id="btn-guide" type="button">操作指南</button>
+      <a id="link-github" href="https://github.com/Vishruth-S/SortSimple" target="_blank" rel="noopener noreferrer">原站源码</a>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="col-control">
+      <section class="card control-panel" aria-label="控制面板">
+        <h2 class="card-title">控制面板</h2>
+
+        <div class="field">
+          <div class="field-head">
+            <label for="size-range">数组大小</label>
+            <output id="size-value" for="size-range">25</output>
+          </div>
+          <input id="size-range" type="range" min="10" max="100" step="1" value="25">
+        </div>
+
+        <div class="field">
+          <label for="array-type">数据分布</label>
+          <select id="array-type"></select>
+        </div>
+
+        <button id="btn-generate" type="button" class="btn btn-secondary btn-block">生成数组</button>
+
+        <div class="field">
+          <label for="algorithm-select">排序算法</label>
+          <select id="algorithm-select"></select>
+        </div>
+
+        <div class="action-row">
+          <button id="btn-sort" type="button" class="btn btn-primary">开始排序</button>
+          <button id="btn-stop" type="button" class="btn btn-danger" disabled>停止</button>
+        </div>
+
+        <div class="field">
+          <div class="field-head">
+            <label for="speed-range">排序速度</label>
+            <output id="speed-value" for="speed-range">55</output>
+          </div>
+          <input id="speed-range" type="range" min="1" max="100" step="1" value="55">
+        </div>
+
+        <div id="stats"><span id="stat-comparisons">0</span><span id="stat-swaps">0</span></div>
+
+        <p id="status-text">就绪</p>
+      </section>
+    </aside>
+
+    <section class="col-stage" aria-label="排序舞台">
+      <div id="array-stage"><div id="array-container"></div></div>
+      <div id="legend"></div>
+    </section>
+
+    <aside class="col-side">
+      <section id="pseudocode-panel" class="card">
+        <h2 id="pseudocode-title">伪代码</h2>
+        <ol id="pseudocode-list"></ol>
+      </section>
+      <section id="complexity-panel" class="card">
+        <div id="complexity-body"></div>
+      </section>
+    </aside>
+  </main>
+
+  <div id="guide-modal" hidden>
+    <div id="guide-card">
+      <div id="guide-dots"></div>
+      <div id="guide-body"></div>
+      <button id="guide-prev" type="button" class="btn btn-secondary">上一步</button>
+      <button id="guide-next" type="button" class="btn btn-primary">下一步</button>
+      <button id="guide-skip" type="button" class="btn btn-ghost">跳过</button>
+      <button id="guide-close" type="button" class="btn btn-close" aria-label="关闭">×</button>
+    </div>
+  </div>
+
+  <script type="module" src="/js/app.js"></script>
+</body>
+</html>

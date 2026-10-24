@@ -1,0 +1,16 @@
+{
+  "name": "sortsimple-zh",
+  "version": "1.0.0",
+  "private": true,
+  "description": "排序算法可视化（SortSimple 中文版）",
+  "type": "module",
+  "main": "server.js",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  },
+  "license": "MIT"
+}
